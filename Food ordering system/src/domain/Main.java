@@ -6,8 +6,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import entities.Client;
-import entities.Employee;
+import helpers.ErrorsDealing;
+import working.Client;
+import working.Employee;
 
 public class Main {
 
@@ -29,19 +30,12 @@ public class Main {
 
 		System.out.println("Welcome to our restaurant!\nIf you are a client press 1, if you are a employee press 2");
 
-		dane = new Scanner(System.in);
-
 		boolean ok = false;
 		int result = 0;
 
 		// try-catch for wrong dates
 		while (!ok) {
-			try {
-				result = Integer.parseInt(dane.next());
-			} catch (NumberFormatException e) {
-				System.out.println("You picked wrong number, please pick correct one.");
-				continue;
-			}
+			result = ErrorsDealing.getIntNumber();
 			if (result == 1 || result == 2) {
 				ok = true;
 			} else {
