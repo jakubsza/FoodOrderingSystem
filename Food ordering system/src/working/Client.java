@@ -47,7 +47,7 @@ public class Client {
 
 	}
 
-	public List<Order> orderingBySinglePerson(List<Order> orders) {
+	private List<Order> orderingBySinglePerson(List<Order> orders) {
 		long cuisine;
 
 		cuisine = choosingCuisine();
